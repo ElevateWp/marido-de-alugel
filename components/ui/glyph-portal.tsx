@@ -354,7 +354,7 @@ export default function GlyphPortal({
     <section ref={sectionRef} id={uid} className={className} aria-label={text}
       style={{ "--gp-length": length, "--gp-characters": Array.from(text).length, ...style } as CSSProperties}>
       <style>{`
-        ${q}{--gp-paper:#ffffff;--gp-ink:#29212A;--gp-field:#24121B;--gp-foreground:#ffffff;position:relative;isolation:isolate;background:var(--gp-paper);color:var(--gp-ink);font-family:inherit;}
+        ${q}{--gp-paper:#ffffff;--gp-ink:#20252B;--gp-field:#17191D;--gp-foreground:#ffffff;position:relative;isolation:isolate;background:var(--gp-paper);color:var(--gp-ink);font-family:inherit;}
         ${q}>[data-gp-viewport]{position:absolute;inset:0 auto auto 0;height:100vh;height:100svh;width:0;pointer-events:none;visibility:hidden;}
         ${q} [data-gp-pin]{position:relative;height:var(--gp-height,100svh);overflow:clip;isolation:isolate;container-type:size;}
         ${q} [data-gp-underlay]{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:var(--gp-caption,1);transition:opacity .15s;}
@@ -366,11 +366,11 @@ export default function GlyphPortal({
         ${q}[data-gp-choosing=true] [data-gp-choices]{visibility:visible;}
         ${q} [data-gp-letter]{box-sizing:border-box;position:absolute;border:0;padding:0;margin:0;background:transparent;cursor:pointer;pointer-events:auto;touch-action:pan-y;}
         ${q} [data-gp-letter]:disabled{pointer-events:none;}
-        ${q} [data-gp-letter]:focus-visible{outline:2px solid #F0144A;outline-offset:5px;}
+        ${q} [data-gp-letter]:focus-visible{outline:2px solid #009FE3;outline-offset:5px;}
         ${q} [data-gp-touch-picker]{display:none;position:absolute;top:calc(var(--gp-word-bottom,50%) + 42px);left:50%;transform:translateX(-50%);font:12px/1.4 Arial,sans-serif;align-items:center;gap:12px;visibility:hidden;}
         ${q}[data-gp-choosing=true] [data-gp-touch-picker]{visibility:visible;}
-        ${q} [data-gp-select]{min-height:44px;min-width:90px;border:1px solid #EADCE1;border-radius:4px;background:var(--gp-paper);color:var(--gp-ink);padding:0 10px;font:inherit;}
-        ${q} [data-gp-select]:focus-visible{outline:2px solid #F0144A;outline-offset:4px;}
+        ${q} [data-gp-select]{min-height:44px;min-width:90px;border:1px solid #DCE5EB;border-radius:4px;background:var(--gp-paper);color:var(--gp-ink);padding:0 10px;font:inherit;}
+        ${q} [data-gp-select]:focus-visible{outline:2px solid #009FE3;outline-offset:4px;}
         @media(any-pointer:coarse){${q} [data-gp-touch-picker]{display:flex;}}
         ${q} [data-gp-fallback]{position:absolute;inset:0;display:none;place-items:center;font-size:min(calc(100cqw / var(--gp-characters)),38cqh);line-height:1;color:var(--gp-field);}
         ${q}[data-gp-ready] [data-gp-fallback]{visibility:hidden;}
@@ -403,7 +403,7 @@ export default function GlyphPortal({
       <div data-gp-pin>
         {underlay && <div data-gp-underlay aria-hidden="true">{underlay}</div>}
         <div data-gp-field aria-hidden="true" inert>
-          {background ?? <div data-gp-default-field style={{ position: "absolute", inset: 0, transform: "scale(var(--gp-field-scale,1))", background: "radial-gradient(circle at 18% 10%, rgba(233,35,54,.22), transparent 38%), radial-gradient(circle at 82% 20%, rgba(22,63,99,.75), transparent 32%), radial-gradient(circle at 50% 80%, rgba(16,43,70,.9), transparent 45%), linear-gradient(135deg,#24121B 0%,#D90B3E 48%,#0C2339 100%)" }} />}
+          {background ?? <div data-gp-default-field style={{ position: "absolute", inset: 0, transform: "scale(var(--gp-field-scale,1))", background: "radial-gradient(circle at 18% 10%, rgba(233,35,54,.22), transparent 38%), radial-gradient(circle at 82% 20%, rgba(22,63,99,.75), transparent 32%), radial-gradient(circle at 50% 80%, rgba(16,43,70,.9), transparent 45%), linear-gradient(135deg,#17191D 0%,#00C5E8 48%,#0C2339 100%)" }} />}
         </div>
         <svg data-gp-art aria-hidden="true" focusable="false">
           <defs>

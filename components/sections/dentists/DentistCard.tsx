@@ -21,12 +21,12 @@ export default function DentistCard({ dentist, offsetY = false }: DentistCardPro
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* ADM Plumbing Services logo */}
+        {/* Marido de Aluguel Campo Engenharia logo */}
         <div className="relative w-full aspect-[4/5] bg-paper overflow-hidden border border-mist mb-5 rounded-none shadow-sm">
           {/* Full logo stays visible inside the profile frame */}
           <Image
             src={dentist.image}
-            alt="Illustrative plumbing team stock photo"
+            alt="Illustrative alvenaria team stock photo"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
             className={`object-contain p-5 transition-all duration-500 ease-nova-ease ${
@@ -53,7 +53,7 @@ export default function DentistCard({ dentist, offsetY = false }: DentistCardPro
             {dentist.title}
           </span>
           <h3 className="font-display text-21 sm:text-24 md:text-26 text-forest-ink group-hover:text-forest transition-colors mb-2">
-            <Link href={`/our-team/${dentist.slug}/`} className="no-underline text-inherit">
+            <Link href={`/equipe/${dentist.slug}/`} className="no-underline text-inherit">
               {dentist.name}
             </Link>
           </h3>

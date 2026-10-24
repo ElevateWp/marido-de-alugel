@@ -28,7 +28,7 @@ interface PinnedHorizontalTrackProps {
 
 export default function PinnedHorizontalTrack({
   items,
-  title = 'Plumbing Services',
+  title = 'Serviços de Alvenaria e Construção',
   className = '',
 }: PinnedHorizontalTrackProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -94,7 +94,23 @@ export default function PinnedHorizontalTrack({
       };
     }, containerRef);
 
-    return () => ctx.revert();
+    // The hero above this pinned section can change height after its custom font and glyph canvas load.
+    // Re-measure ScrollTrigger when that happens so the pin never overlaps the stats/reviews above it.
+    const hero = document.querySelector<HTMLElement>('[data-slipstream-demo]');
+    let refreshFrame = 0;
+    const refreshAfterLayout = () => {
+      cancelAnimationFrame(refreshFrame);
+      refreshFrame = requestAnimationFrame(() => ScrollTrigger.refresh());
+    };
+    const heroObserver = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(refreshAfterLayout) : null;
+    if (hero) heroObserver?.observe(hero);
+    refreshAfterLayout();
+
+    return () => {
+      heroObserver?.disconnect();
+      cancelAnimationFrame(refreshFrame);
+      ctx.revert();
+    };
   }, [items, isDesktop]);
 
   return (
@@ -107,7 +123,7 @@ export default function PinnedHorizontalTrack({
         <div>
           <span className="font-body text-13 text-forest-ink/60 block mb-2">{title}</span>
           <h2 className="font-display text-26 sm:text-33 md:text-41 text-forest-ink leading-tight">
-            Plumbing Services
+            Serviços de Alvenaria e Construção
           </h2>
         </div>
         <div className="flex items-center gap-4">
@@ -233,7 +249,7 @@ export default function PinnedHorizontalTrack({
               setCurrentIndex(idx + 1);
             }}
             className={`h-3 rounded-full transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest ${
-              idx === currentIndex - 1 ? 'bg-[#29212A] w-4' : 'bg-[#EADCE1] w-3'
+              idx === currentIndex - 1 ? 'bg-[#20252B] w-4' : 'bg-[#DCE5EB] w-3'
             }`}
           />
         ))}

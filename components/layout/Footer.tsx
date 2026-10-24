@@ -14,7 +14,7 @@ export default function Footer() {
               <div className="w-40 h-14 sm:w-48 sm:h-[70px] bg-paper rounded-xl p-2 flex items-center justify-center flex-shrink-0 shadow-md">
                 <Image
                   src="/images/logo.png"
-                  alt="ADM Plumbing Services logo"
+                  alt="Marido de Aluguel Campo Engenharia logo"
                   width={220}
                   height={80}
                   className="object-contain w-full h-full"
@@ -22,18 +22,18 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="font-display text-24 md:text-30 font-medium leading-tight">
-                  ADM Plumbing Services
+                  Marido de Aluguel Campo Engenharia
                 </span>
                 <span className="font-body text-13 text-paper/70 font-medium">
-                  Toilet · Bidet · Pipe Repairs
+                  Alvenaria · Construção · Reformas
                 </span>
               </div>
             </div>
             <p className="font-body text-16 text-paper/80 leading-relaxed max-w-xl">
-              Plumbing and building services across Singapore.
+              Serviços de alvenaria, construção e reformas em Aparecida de Goiânia.
             </p>
             <div className="mt-6 flex flex-wrap gap-4 text-13 text-paper/60">
-              <span>+65 8133 9461</span>
+              <span>+55 62 98236-7515</span>
               {CLINIC_INFO.contact.email && <a href={`mailto:${CLINIC_INFO.contact.email}`} className="hover:text-paper">{CLINIC_INFO.contact.email}</a>}
             </div>
           </div>
@@ -41,10 +41,10 @@ export default function Footer() {
           <div className="lg:col-span-6 lg:pl-12 flex flex-col justify-between">
             <div className="p-6 bg-paper/5 border border-mist/20 rounded-none shadow-sm">
               <span className="font-body text-13 text-lime block mb-2 font-semibold uppercase tracking-wider">
-                Plumbing Services
+                Serviços de Alvenaria e Construção
               </span>
               <p className="font-body text-15 text-paper/90 mb-4">
-                Need a plumber? Call or WhatsApp ADM Plumbing Services.
+                Precisa de um reparo ou reforma? Fale com a Campo Engenharia.
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 <a
@@ -53,10 +53,10 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="font-body text-15 font-semibold text-lime hover:underline"
                 >
-                  Call: {CLINIC_INFO.contact.phone}
+                  Telefone: {CLINIC_INFO.contact.phone}
                 </a>
                 <Link
-                  href="/request-a-quote/"
+                  href="/solicitar-orcamento/"
                   className="font-body text-13 text-paper/80 underline underline-offset-4 hover:text-paper"
                 >
                   Request a Quote
@@ -90,18 +90,18 @@ export default function Footer() {
           {/* Column 2: technical Team */}
           <div className="col-span-1">
             <span className="font-body text-13 text-paper/40 uppercase tracking-wider block mb-4 font-semibold">
-              Our Team
+              Nossa Equipe
             </span>
             <ul className="space-y-2.5 font-body text-15">
               <li>
-                <Link href="/our-team/" className="text-paper/80 hover:text-lime transition-colors">
-                  Meet the Plumbing Services Team
+                <Link href="/equipe/" className="text-paper/80 hover:text-lime transition-colors">
+                  Meet the Serviços de Alvenaria e Construção Team
                 </Link>
               </li>
               {DENTISTS.map((d) => (
                 <li key={d.slug}>
                   <Link
-                    href={`/our-team/${d.slug}/`}
+                    href={`/equipe/${d.slug}/`}
                     className="text-paper/80 hover:text-lime transition-colors"
                   >
                     {d.name}
@@ -118,32 +118,32 @@ export default function Footer() {
             </span>
             <ul className="space-y-2.5 font-body text-15">
               <li>
-                <Link href="/about/" className="text-paper/80 hover:text-lime transition-colors">
-                  About Us
+                <Link href="/sobre/" className="text-paper/80 hover:text-lime transition-colors">
+                  Sobre
                 </Link>
               </li>
               <li>
-                <Link href="/services/" className="text-paper/80 hover:text-lime transition-colors">
-                  Plumbing Services
+                <Link href="/servicos/" className="text-paper/80 hover:text-lime transition-colors">
+                  Serviços de Alvenaria e Construção
                 </Link>
               </li>
               <li>
-                <Link href="/blog/" className="text-paper/80 hover:text-lime transition-colors">
-                  Plumbing Advice
+                <Link href="/dicas/" className="text-paper/80 hover:text-lime transition-colors">
+                  Dicas de Construção
                 </Link>
               </li>
               <li>
-                <Link href="/request-a-quote/" className="text-paper/80 hover:text-lime transition-colors">
+                <Link href="/solicitar-orcamento/" className="text-paper/80 hover:text-lime transition-colors">
                   Request a Quote
                 </Link>
               </li>
               <li>
-                <Link href="/contact/" className="text-paper/80 hover:text-lime transition-colors">
+                <Link href="/contato/" className="text-paper/80 hover:text-lime transition-colors">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/request-a-quote/" className="text-paper/80 hover:text-lime transition-colors">
+                <Link href="/solicitar-orcamento/" className="text-paper/80 hover:text-lime transition-colors">
                   Discuss Your Project
                 </Link>
               </li>
@@ -180,10 +180,10 @@ export default function Footer() {
         {/* Bottom Section: Legal & Copyright */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-body text-13 text-paper/60">
           <div>
-            © {new Date().getFullYear()} {CLINIC_INFO.legalName}. All rights reserved.
+            © {new Date().getFullYear()} {CLINIC_INFO.legalName}. Todos os direitos reservados.
           </div>
           <div className="flex items-center gap-6">
-            <a href="https://singaporeplumbingadm.com/" className="hover:text-paper">singaporeplumbingadm.com</a>
+            <a href="/" className="hover:text-paper">Aparecida de Goiânia · Goiás</a>
           </div>
         </div>
       </div>

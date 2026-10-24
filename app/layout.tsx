@@ -9,24 +9,24 @@ import JsonLd from '@/components/ui/JsonLd';
 import { generateLocalBusinessSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://singaporeplumbingadm.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3187'),
   title: {
-    default: 'ADM Plumbing Services | Plumber Singapore',
+    default: 'Marido de Aluguel Campo Engenharia | Alvenaria e Construção',
     template: '%s',
   },
   description:
-    'Contact ADM Plumbing Services in Singapore for toilet bowl, bidet, sink and pipe repairs. Call or WhatsApp +65 8133 9461.',
+    'Serviços de alvenaria, construção e reformas em Aparecida de Goiânia. Ligue para +55 62 98236-7515.',
   keywords: [
-    'ADM Plumbing Services',
-    'plumbing services Singapore',
-    'plumbing repairs',
+    'Marido de Aluguel Campo Engenharia',
+    'serviços de alvenaria em Aparecida de Goiânia',
+    'reformas residenciais',
   ],
-  authors: [{ name: 'ADM Plumbing Services' }],
+  authors: [{ name: 'Marido de Aluguel Campo Engenharia' }],
   icons: {
     icon: [
       { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+      
     ],
     shortcut: [{ url: '/favicon-32.png', type: 'image/png' }],
     apple: [{ url: '/favicon-180.png', sizes: '180x180', type: 'image/png' }],
@@ -39,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-SG" className="scroll-smooth">
+    <html lang="pt-BR" className="scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -48,7 +48,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-paper text-forest-ink min-h-screen flex flex-col selection:bg-[#FCE0E8] selection:text-[#29212A]">
+      <body className="bg-paper text-forest-ink min-h-screen flex flex-col selection:bg-[#D9F1FA] selection:text-[#20252B]">
         <PagePreloader />
         <SiteTextReveal />
         <JsonLd data={generateLocalBusinessSchema()} />

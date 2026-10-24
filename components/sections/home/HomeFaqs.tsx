@@ -7,29 +7,29 @@ import { CLINIC_INFO } from '@/lib/clinic-data';
 
 const HOME_FAQS: AccordionItem[] = [
   {
-    question: 'What plumbing services can I ask about?',
-    answer: 'Ask about plumbing toilet flushing system repairs, plumbing leaks, general plumbing repairs and other plumbing work.',
-    relatedLink: { href: '/services/', label: 'Explore our services →' },
+    question: 'What alvenaria services can I ask about?',
+    answer: 'Converse sobre alvenaria, construção, reformas, assentamento de pisos e reparos residenciais.',
+    relatedLink: { href: '/servicos/', label: 'Explore our services →' },
   },
   {
     question: 'Do you cover my area?',
-    answer: 'The team is based near Singapore. Call to confirm availability for your address.',
-    relatedLink: { href: '/contact/', label: 'Contact our team →' },
+    answer: 'The team is based near Aparecida de Goiânia. Call to confirm availability for your address.',
+    relatedLink: { href: '/contato/', label: 'Contact our team →' },
   },
   {
-    question: 'Do you carry out plumbing repairs?',
-    answer: 'Yes. ADM Plumbing Services carries out plumbing repairs. Call to discuss your property and the work required.',
-    relatedLink: { href: '/plumbing-repairs/', label: 'Explore plumbing repairs →' },
+    question: 'Do you carry out alvenaria repairs?',
+    answer: 'Sim. Entre em contato para conversar sobre reparos e serviços de alvenaria para o seu imóvel.',
+    relatedLink: { href: '/pequenos-reparos/', label: 'Conheça os serviços →' },
   },
   {
     question: 'How do I request a quote?',
     answer: `Call us on ${CLINIC_INFO.contact.phone} or send a message through our quote request form.`,
-    relatedLink: { href: '/request-a-quote/', label: 'Request a quote →' },
+    relatedLink: { href: '/solicitar-orcamento/', label: 'Solicite um orçamento →' },
   },
   {
     question: 'How can I confirm service availability?',
     answer: `Call ${CLINIC_INFO.contact.phone} to discuss your property and confirm service availability.`,
-    relatedLink: { href: '/contact/', label: 'Contact our team →' },
+    relatedLink: { href: '/contato/', label: 'Contact our team →' },
   },
 ];
 
@@ -44,10 +44,10 @@ export default function HomeFaqs() {
               Frequently Asked Questions
             </span>
             <h2 className="font-display text-33 md:text-41 text-forest-ink mb-6">
-              Questions about your plumbing project
+              Questions about your alvenaria project
             </h2>
             <p className="font-body text-15 md:text-17 text-forest-ink/80 leading-relaxed mb-6">
-                Find out about plumbing work, quotes and service availability.
+                Find out about alvenaria work, quotes and service availability.
             </p>
             <div className="p-6 bg-mist/40 border border-mist">
               <span className="font-body text-13 text-forest font-medium block mb-1">

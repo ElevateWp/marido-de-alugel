@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { CLINIC_INFO } from './clinic-data';
 
-export const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://singaporeplumbingadm.com';
+export const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3187';
 
 export function createMetadata({
   title,
@@ -29,7 +29,7 @@ export function createMetadata({
       description,
       url,
       siteName: CLINIC_INFO.name,
-      locale: 'en_SG',
+      locale: 'pt_BR',
       type: 'website',
       images: [
         {
@@ -63,7 +63,7 @@ export function createMetadata({
 export function generateLocalBusinessSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'PlumbingContractor',
+    '@type': 'GeneralContractor',
     '@id': `${BASE_URL}/#business`,
     name: CLINIC_INFO.name,
     legalName: CLINIC_INFO.legalName,
@@ -108,7 +108,7 @@ export function generateServiceSchema(serviceName: string, description: string, 
     '@type': 'Service',
     name: serviceName,
     description: description,
-    serviceType: 'Plumbing Services',
+    serviceType: 'Alvenaria, construção e reformas',
     url: `${BASE_URL}${url}`,
     provider: {
       '@type': 'LocalBusiness',

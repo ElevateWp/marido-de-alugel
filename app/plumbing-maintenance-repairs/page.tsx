@@ -1,5 +1,2 @@
 import { redirect } from 'next/navigation';
-
-export default function LegacyServiceRedirect() {
-  redirect('/plumbing-repairs/');
-}
+export default function LegacyService(){ redirect('/pequenos-reparos/'); }

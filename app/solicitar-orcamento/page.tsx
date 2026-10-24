@@ -9,17 +9,17 @@ import AnimateOnScroll from '@/components/motion/AnimateOnScroll';
 import { createMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = createMetadata({
-  title: 'Request a Plumbing Quote',
+  title: 'Solicite um orçamento',
   description:
-    'Request a quote for plumbing services or repairs from ADM Plumbing Services. Call +65 8133 9461.',
-  pathname: '/request-a-quote/',
+    'Solicite um orçamento para serviços de alvenaria, construção ou reformas. Ligue para +55 62 98236-7515.',
+  pathname: '/solicitar-orcamento/',
 });
 
 const BOOKING_STEPS = [
   {
     step: 1,
     title: 'Send Your Request',
-    description: 'Tell us about your plumbing project and how you would like us to contact you.',
+    description: 'Tell us about your alvenaria project and how you would like us to contact you.',
   },
   {
     step: 2,
@@ -28,13 +28,13 @@ const BOOKING_STEPS = [
   },
   {
     step: 3,
-    title: 'We Get in Touch',
+    title: 'Entramos em contato',
     description: 'We contact you to discuss your request and arrange an assessment.',
   },
   {
     step: 4,
-    title: 'Plumbing Work',
-    description: 'The ADM Plumbing Services team completes the agreed work at your property.',
+    title: 'Serviços de Construção',
+    description: 'A equipe da Marido de Aluguel Campo Engenharia realiza o serviço combinado no seu imóvel.',
   },
 ];
 
@@ -44,7 +44,7 @@ export default function BookAppointmentPage() {
       {/* SECTION 1: Appointment Introduction */}
       <section className="py-16 md:py-24 border-b border-mist">
         <div className="max-w-site mx-auto px-6 md:px-12">
-          <Breadcrumbs items={[{ name: 'Request a Quote', path: '/request-a-quote/' }]} />
+          <Breadcrumbs items={[{ name: 'Request a Quote', path: '/solicitar-orcamento/' }]} />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-8 items-start">
             <div className="lg:col-span-8">
@@ -52,9 +52,9 @@ export default function BookAppointmentPage() {
                 <span className="font-body text-13 text-forest-ink/60 block mb-3 uppercase tracking-wider font-medium">
                   Personal Service
                 </span>
-                <WordRevealH1 text="Request a plumbing quote." />
+                <WordRevealH1 text="Request a alvenaria quote." />
                 <div className="mt-8">
-                  <ScrubbedParagraph text="Tell us about the plumbing work you need and the team will discuss availability and next steps." />
+                  <ScrubbedParagraph text="Tell us about the alvenaria work you need and a equipe will discuss availability and next steps." />
                 </div>
               </AnimateOnScroll>
             </div>
@@ -139,7 +139,7 @@ export default function BookAppointmentPage() {
             <AnimateOnScroll animation="fade-up" delay={0.1}>
               <div className="p-8 bg-paper border border-mist h-full shadow-sm">
                 <span className="font-body text-13 text-forest block mb-2 font-medium uppercase tracking-wider">Contact</span>
-                <h3 className="font-display text-21 text-forest-ink mb-4">Talk to Our Team</h3>
+                <h3 className="font-display text-21 text-forest-ink mb-4">Fale com nossa equipe</h3>
                 <div className="space-y-3 font-body text-13 text-forest-ink/80">
                   <div>
                     <span className="text-forest-ink/60 block">Phone:</span>

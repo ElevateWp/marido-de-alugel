@@ -17,9 +17,9 @@ import { SERVICES } from '@/lib/clinic-data';
 import { createMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = createMetadata({
-  title: 'Plumbing Services',
+  title: 'Serviços de Alvenaria e Construção',
   description:
-    'ADM Plumbing Services provides plumbing services in Singapore. Call +65 8133 9461.',
+    'Serviços de alvenaria, construção e reformas em Aparecida de Goiânia. Ligue para +55 62 98236-7515.',
   pathname: '/',
 });
 
@@ -41,13 +41,13 @@ export default function HomePage() {
       {/* SECTION 2: Trust / Highlights */}
       <HomeStats />
 
-      {/* SECTION 2A: Customer reviews */}
+      {/* SECTION 2A: Avaliações de clientes */}
       <HomeReviews />
 
-      {/* SECTION 3: Plumbing Services */}
+      {/* SECTION 3: Serviços de Alvenaria e Construção */}
       <PinnedHorizontalTrack
         items={serviceTrackItems}
-        title="Plumbing Services"
+        title="Serviços de Alvenaria e Construção"
       />
 
       {/* Signature Brand Device 2 of 4: Full-Bleed Section Divider */}
@@ -55,19 +55,19 @@ export default function HomePage() {
         <TextureBackground variant="divider" className="opacity-30" />
       </div>
 
-      {/* SECTION 4: Why Choose ADM Plumbing Services */}
+      {/* SECTION 4: Por que escolher a Campo Engenharia */}
       <HomeWhyUs />
 
-      {/* SECTION 5: Meet Our Team */}
+      {/* SECTION 5: Conheça nossa equipe */}
       <HomeDentists />
 
-      {/* SECTION 6: Featured Plumbing Work */}
+      {/* SECTION 6: Serviços em Destaque */}
       <HomeFeaturedTreatments />
 
       {/* SECTION 7: Before & After (Draggable Slider - Orchestrated Moment 3) */}
       <HomeBeforeAfter />
 
-      {/* SECTION 9: Plumbing Services Projects */}
+      {/* SECTION 9: Serviços de Alvenaria e Construção Projects */}
       <HomeGallery />
 
       {/* SECTION 10: Frequently Asked Questions */}

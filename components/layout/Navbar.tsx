@@ -36,18 +36,18 @@ export default function Navbar() {
     <>
     <header
       data-site-header
-      className="fixed top-0 left-0 right-0 z-50 bg-paper/95 backdrop-blur-md py-2.5 sm:py-3 border-b border-[#EADCE1] shadow-sm"
+      className="fixed top-0 left-0 right-0 z-50 bg-paper/95 backdrop-blur-md py-2.5 sm:py-3 border-b border-[#DCE5EB] shadow-sm"
     >
       <div className="mx-auto flex max-w-site items-center justify-between px-4 sm:px-6 md:px-12">
         {/* Brand Logo - compact on mobile */}
         <Link
           href="/"
           className="group flex items-center no-underline focus-visible:outline-offset-4 flex-shrink-0 min-w-0"
-          aria-label="ADM Plumbing Services"
+          aria-label="Marido de Aluguel Campo Engenharia"
         >
           <Image
             src="/images/logo.png"
-            alt="ADM Plumbing Services logo"
+            alt="Marido de Aluguel Campo Engenharia logo"
             width={240}
             height={88}
             priority
@@ -57,7 +57,7 @@ export default function Navbar() {
 
         {/* Desktop Primary Navigation (Active on xl screens >= 1200px) */}
         <nav className="hidden xl:flex items-center gap-7 2xl:gap-8" aria-label="Main navigation">
-          {/* Services Dropdown */}
+          {/* Serviços Dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setServicesDropdownOpen(true)}
@@ -67,14 +67,14 @@ export default function Navbar() {
               type="button"
               className={`font-body text-15 py-2 transition-colors flex items-center gap-1.5 cursor-pointer ${
                 SERVICES.some((service) => pathname?.startsWith(`/${service.slug}/`))
-                  ? 'text-[#29212A] font-semibold'
-                  : 'text-[#29212A]/80 hover:text-[#756B75] font-medium'
+                  ? 'text-[#20252B] font-semibold'
+                  : 'text-[#20252B]/80 hover:text-[#69747F] font-medium'
               }`}
               aria-expanded={servicesDropdownOpen}
             >
-              <span>Services</span>
+              <span>Serviços</span>
               <span
-                className={`w-1.5 h-1.5 border-r border-b border-[#29212A]/60 transition-transform duration-200 ${
+                className={`w-1.5 h-1.5 border-r border-b border-[#20252B]/60 transition-transform duration-200 ${
                   servicesDropdownOpen ? '-rotate-135 -translate-y-0.5' : 'rotate-45 translate-y-[-2px]'
                 }`}
                 aria-hidden="true"
@@ -84,7 +84,7 @@ export default function Navbar() {
             {/* Dropdown Panel with Pure White Background and Smooth Shadow */}
             {servicesDropdownOpen && (
               <div className="absolute top-full -left-4 pt-2 w-64 z-50 animate-fade-in">
-                <div className="p-2 bg-paper border border-[#EADCE1] shadow-[0_12px_36px_rgba(17,17,17,0.08)] rounded-2xl">
+                <div className="p-2 bg-paper border border-[#DCE5EB] shadow-[0_12px_36px_rgba(17,17,17,0.08)] rounded-2xl">
                   <div className="space-y-0.5">
                     {SERVICES.map((s) => (
                       <Link
@@ -92,8 +92,8 @@ export default function Navbar() {
                         href={`/${s.slug}/`}
                         className={`block px-3.5 py-2 text-14 font-body transition-all duration-200 rounded-xl ${
                           pathname === `/${s.slug}/`
-                            ? 'bg-[#FFF4F6] text-[#29212A] font-semibold shadow-xs'
-                            : 'text-[#29212A]/85 hover:bg-[#FFF4F6]/50 hover:text-[#756B75] hover:translate-x-1'
+                            ? 'bg-[#F3F7FA] text-[#20252B] font-semibold shadow-xs'
+                            : 'text-[#20252B]/85 hover:bg-[#F3F7FA]/50 hover:text-[#69747F] hover:translate-x-1'
                         }`}
                       >
                         <span className="block font-medium">{s.navLabel}</span>
@@ -106,100 +106,100 @@ export default function Navbar() {
           </div>
 
           <Link
-            href="/about/"
+            href="/sobre/"
             className={`font-body text-15 py-2 transition-colors ${
-              pathname === '/about/'
-                ? 'text-[#29212A] font-semibold'
-                : 'text-[#29212A]/80 hover:text-[#756B75] font-medium'
+              pathname === '/sobre/'
+                ? 'text-[#20252B] font-semibold'
+                : 'text-[#20252B]/80 hover:text-[#69747F] font-medium'
             }`}
           >
-            About Us
+            Sobre
           </Link>
 
           <Link
-            href="/services/"
+            href="/servicos/"
             className={`font-body text-15 py-2 transition-colors ${
-              pathname?.startsWith('/services')
-                ? 'text-[#29212A] font-semibold'
-                : 'text-[#29212A]/80 hover:text-[#756B75] font-medium'
+              pathname?.startsWith('/servicos')
+                ? 'text-[#20252B] font-semibold'
+                : 'text-[#20252B]/80 hover:text-[#69747F] font-medium'
             }`}
           >
-            Services
+            Serviços
           </Link>
 
           <Link
-            href="/our-team/"
+            href="/equipe/"
             className={`font-body text-15 py-2 transition-colors ${
-              pathname?.startsWith('/our-team')
-                ? 'text-[#29212A] font-semibold'
-                : 'text-[#29212A]/80 hover:text-[#756B75] font-medium'
+              pathname?.startsWith('/equipe')
+                ? 'text-[#20252B] font-semibold'
+                : 'text-[#20252B]/80 hover:text-[#69747F] font-medium'
             }`}
           >
-            Our Team
+            Nossa Equipe
           </Link>
 
           <Link
-            href="/blog/"
+            href="/dicas/"
             className={`font-body text-15 py-2 transition-colors ${
-              pathname?.startsWith('/blog')
-                ? 'text-[#29212A] font-semibold'
-                : 'text-[#29212A]/80 hover:text-[#756B75] font-medium'
+              pathname?.startsWith('/dicas')
+                ? 'text-[#20252B] font-semibold'
+                : 'text-[#20252B]/80 hover:text-[#69747F] font-medium'
             }`}
           >
-            Plumbing Advice
+            Dicas de Construção
           </Link>
 
           <Link
-            href="/contact/"
+            href="/contato/"
             className={`font-body text-15 py-2 transition-colors ${
-              pathname === '/contact/'
-                ? 'text-[#29212A] font-semibold'
-                : 'text-[#29212A]/80 hover:text-[#756B75] font-medium'
+              pathname === '/contato/'
+                ? 'text-[#20252B] font-semibold'
+                : 'text-[#20252B]/80 hover:text-[#69747F] font-medium'
             }`}
           >
-            Contact
+            Contato
           </Link>
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
           <Link
-            href="/request-a-quote/"
-            className="hidden xl:inline-flex h-10 w-[176px] items-center justify-center rounded-md border border-[#F0144A] bg-[#F0144A] px-3 font-body text-13 font-semibold text-white transition-colors hover:border-[#FF3868] hover:bg-[#FF3868] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F0144A] whitespace-nowrap"
+            href="/solicitar-orcamento/"
+            className="hidden xl:inline-flex h-10 w-[176px] items-center justify-center rounded-md border border-[#009FE3] bg-[#009FE3] px-3 font-body text-13 font-semibold text-white transition-colors hover:border-[#18B8F2] hover:bg-[#18B8F2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#009FE3] whitespace-nowrap"
           >
-            <span>Discuss Your Project</span>
+            <span>Fale sobre seu projeto</span>
           </Link>
 
           <Button
-            href="/request-a-quote/"
+            href="/solicitar-orcamento/"
             variant="forest"
             size="sm"
             className="h-9 w-[160px] hidden xl:inline-flex items-center justify-center gap-2 px-2 text-12 sm:text-13 font-semibold whitespace-nowrap"
           >
-            <span>Get a Quote</span>
+            <span>Solicite um orçamento</span>
           </Button>
 
           {/* Mobile / Tablet Hamburger Toggle */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="xl:hidden p-2 text-[#29212A] focus-visible:outline-offset-2 flex items-center justify-center cursor-pointer rounded-lg hover:bg-[#FFF4F6] transition-colors"
+            className="xl:hidden p-2 text-[#20252B] focus-visible:outline-offset-2 flex items-center justify-center cursor-pointer rounded-lg hover:bg-[#F3F7FA] transition-colors"
             aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-controls="mobile-navigation"
             aria-expanded={mobileMenuOpen}
           >
             <div className="w-6 h-5 relative flex flex-col justify-between">
               <span
-                className={`w-full h-[2px] bg-[#29212A] transition-transform duration-250 ${
+                className={`w-full h-[2px] bg-[#20252B] transition-transform duration-250 ${
                   mobileMenuOpen ? 'rotate-45 translate-y-2' : ''
                 }`}
               />
               <span
-                className={`w-full h-[2px] bg-[#29212A] transition-opacity duration-200 ${
+                className={`w-full h-[2px] bg-[#20252B] transition-opacity duration-200 ${
                   mobileMenuOpen ? 'opacity-0' : 'opacity-100'
                 }`}
               />
               <span
-                className={`w-full h-[2px] bg-[#29212A] transition-transform duration-250 ${
+                className={`w-full h-[2px] bg-[#20252B] transition-transform duration-250 ${
                   mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
                 }`}
               />
@@ -214,7 +214,7 @@ export default function Navbar() {
         id="mobile-navigation"
         aria-label="Mobile navigation"
         aria-hidden={!mobileMenuOpen}
-        className={`xl:hidden fixed inset-x-0 top-[95px] sm:top-[110px] md:top-[121px] bottom-0 bg-paper border-t border-[#EADCE1] overflow-y-auto overscroll-contain px-4 sm:px-6 py-5 sm:py-6 flex flex-col justify-between z-[999] transition-all duration-300 ease-in-out shadow-2xl ${
+        className={`xl:hidden fixed inset-x-0 top-[95px] sm:top-[110px] md:top-[121px] bottom-0 bg-paper border-t border-[#DCE5EB] overflow-y-auto overscroll-contain px-4 sm:px-6 py-5 sm:py-6 flex flex-col justify-between z-[999] transition-all duration-300 ease-in-out shadow-2xl ${
           mobileMenuOpen
             ? 'opacity-100 pointer-events-auto translate-y-0'
             : 'opacity-0 pointer-events-none -translate-y-4'
@@ -227,14 +227,14 @@ export default function Navbar() {
               onClick={() => setMobileServicesOpen((open) => !open)}
               aria-expanded={mobileServicesOpen}
               aria-controls="mobile-services-list"
-              className="flex min-h-12 w-full items-center justify-between py-2 text-left font-body text-13 font-bold uppercase tracking-wider text-[#29212A]"
+              className="flex min-h-12 w-full items-center justify-between py-2 text-left font-body text-13 font-bold uppercase tracking-wider text-[#20252B]"
             >
-              <span>Services</span>
+              <span>Serviços</span>
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
                 aria-hidden="true"
-                className={`mr-1 h-4 w-4 text-[#29212A]/70 transition-transform duration-200 ${
+                className={`mr-1 h-4 w-4 text-[#20252B]/70 transition-transform duration-200 ${
                   mobileServicesOpen ? 'rotate-180' : 'rotate-0'
                 }`}
               >
@@ -253,8 +253,8 @@ export default function Navbar() {
                     }}
                     className={`flex min-h-11 items-center rounded-md px-3 font-body text-15 transition-colors ${
                       pathname === `/${s.slug}/`
-                        ? 'bg-[#FCE0E8] font-semibold text-[#29212A]'
-                        : 'text-[#29212A] hover:bg-[#FFF4F6] hover:text-[#756B75]'
+                        ? 'bg-[#D9F1FA] font-semibold text-[#20252B]'
+                        : 'text-[#20252B] hover:bg-[#F3F7FA] hover:text-[#69747F]'
                     }`}
                   >
                     {s.navLabel}
@@ -264,77 +264,77 @@ export default function Navbar() {
             )}
           </div>
 
-          <div className="pt-4 border-t border-[#EADCE1] flex flex-col space-y-3">
+          <div className="pt-4 border-t border-[#DCE5EB] flex flex-col space-y-3">
             <Link
-              href="/about/"
+              href="/sobre/"
               onClick={() => setMobileMenuOpen(false)}
               className={`font-body text-16 transition-colors ${
-                pathname === '/about/' ? 'text-[#29212A] font-semibold' : 'text-[#29212A] hover:text-[#756B75]'
+                pathname === '/sobre/' ? 'text-[#20252B] font-semibold' : 'text-[#20252B] hover:text-[#69747F]'
               }`}
             >
-              About Us
+              Sobre
             </Link>
             <Link
-              href="/services/"
+              href="/servicos/"
               onClick={() => setMobileMenuOpen(false)}
               className={`font-body text-16 transition-colors ${
-                pathname?.startsWith('/services') ? 'text-[#29212A] font-semibold' : 'text-[#29212A] hover:text-[#756B75]'
+                pathname?.startsWith('/servicos') ? 'text-[#20252B] font-semibold' : 'text-[#20252B] hover:text-[#69747F]'
               }`}
             >
-              Services
+              Serviços
             </Link>
             <Link
-              href="/our-team/"
+              href="/equipe/"
               onClick={() => setMobileMenuOpen(false)}
               className={`font-body text-16 transition-colors ${
-                pathname?.startsWith('/our-team') ? 'text-[#29212A] font-semibold' : 'text-[#29212A] hover:text-[#756B75]'
+                pathname?.startsWith('/equipe') ? 'text-[#20252B] font-semibold' : 'text-[#20252B] hover:text-[#69747F]'
               }`}
             >
-              Our Team
+              Nossa Equipe
             </Link>
             <Link
-              href="/request-a-quote/"
+              href="/solicitar-orcamento/"
               onClick={() => setMobileMenuOpen(false)}
-              className={`font-body text-16 font-semibold text-[#29212A] hover:underline`}
+              className={`font-body text-16 font-semibold text-[#20252B] hover:underline`}
             >
-              Discuss Your Project
+              Fale sobre seu projeto
             </Link>
             <Link
-              href="/blog/"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`font-body text-16 transition-colors ${
-                pathname?.startsWith('/blog') ? 'text-[#29212A] font-semibold' : 'text-[#29212A] hover:text-[#756B75]'
-              }`}
-            >
-              Plumbing Advice
-            </Link>
-            <Link
-              href="/contact/"
+              href="/dicas/"
               onClick={() => setMobileMenuOpen(false)}
               className={`font-body text-16 transition-colors ${
-                pathname === '/contact/' ? 'text-[#29212A] font-semibold' : 'text-[#29212A] hover:text-[#756B75]'
+                pathname?.startsWith('/dicas') ? 'text-[#20252B] font-semibold' : 'text-[#20252B] hover:text-[#69747F]'
               }`}
             >
-              Contact
+              Dicas de Construção
+            </Link>
+            <Link
+              href="/contato/"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`font-body text-16 transition-colors ${
+                pathname === '/contato/' ? 'text-[#20252B] font-semibold' : 'text-[#20252B] hover:text-[#69747F]'
+              }`}
+            >
+              Contato
             </Link>
           </div>
         </div>
 
-        <div className="pt-6 mt-6 border-t border-[#EADCE1] flex flex-col gap-3 pb-8">
+        <div className="pt-6 mt-6 border-t border-[#DCE5EB] flex flex-col gap-3 pb-8">
           <Button
-            href="/request-a-quote/"
+            href="/solicitar-orcamento/"
             variant="forest"
             size="lg"
             className="w-full"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Get a Quote
+            Solicite um orçamento
           </Button>
           <a
             href={`tel:${CLINIC_INFO.contact.phone.replace(/[^0-9+]/g, '')}`}
-            className="text-center font-body text-15 text-[#29212A] py-2 font-semibold hover:text-[#756B75] transition-colors"
+            className="text-center font-body text-15 text-[#20252B] py-2 font-semibold hover:text-[#69747F] transition-colors"
           >
-            Call: {CLINIC_INFO.contact.phone}
+            Telefone: {CLINIC_INFO.contact.phone}
           </a>
         </div>
       </div>

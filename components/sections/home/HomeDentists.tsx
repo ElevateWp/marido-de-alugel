@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { TiltedGridHero } from '@/components/ui/tilted-grid-hero';
 
 const TEAM_IMAGES = [
-  { src: '/images/team-stock-01.jpg', alt: 'Stock portrait of a team member' },
-  { src: '/images/team-stock-02.jpg', alt: 'Stock portrait of a team member' },
-  { src: '/images/team-stock-03.jpg', alt: 'Stock portrait of a team member' },
-  { src: '/images/team-stock-04.jpg', alt: 'Stock portrait of a team member' },
+  { src: '/images/roofing-hero.png', alt: 'Projeto de construção e reforma' },
+  { src: '/images/roof-repair.png', alt: 'Serviço de reforma residencial' },
+  { src: '/images/roof-with-tiles.png', alt: 'Acabamento de construção' },
+  { src: '/images/roof-saffron-walden-1024x768-1.jpg', alt: 'Projeto de manutenção residencial' },
 ];
 
 export default function HomeDentists() {
@@ -27,20 +27,20 @@ export default function HomeDentists() {
           <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-paper via-paper/10 via-30% to-paper/85" />
           <div className="relative z-20 flex h-full flex-col items-center px-5 py-10 text-center md:py-14">
             <span className="font-body text-13 font-medium uppercase tracking-[0.18em] text-forest-ink/60">
-              Our Team
+              Nossa equipe
             </span>
             <h2 className="mt-3 max-w-3xl font-display text-26 text-balance text-forest-ink md:text-41">
-              Meet the ADM Plumbing Services team
+              Conheça a equipe Campo Engenharia
             </h2>
             <div className="mt-auto flex flex-col items-center pb-1">
               <p className="max-w-lg text-balance font-body text-15 leading-relaxed text-forest-ink/70">
-                ADM Plumbing Services brings over 10 years of plumbing experience and provides clear quotations.
+                Serviços de alvenaria e construção com atendimento pontual, atencioso e eficiente.
               </p>
               <Link
-                href="/our-team/"
-                className="pointer-events-auto mt-6 inline-flex rounded-full bg-[#F0144A] px-7 py-3 font-body text-15 font-semibold text-white shadow-lg shadow-[#F0144A]/20 transition-transform hover:-translate-y-0.5"
+                href="/equipe/"
+                className="pointer-events-auto mt-6 inline-flex rounded-full bg-[#009FE3] px-7 py-3 font-body text-15 font-semibold text-white shadow-lg shadow-[#009FE3]/20 transition-transform hover:-translate-y-0.5"
               >
-                Meet the Team <span className="ml-2" aria-hidden="true">→</span>
+                Conheça a equipe <span className="ml-2" aria-hidden="true">→</span>
               </Link>
             </div>
           </div>

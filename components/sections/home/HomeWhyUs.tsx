@@ -5,20 +5,20 @@ import AnimateOnScroll from '@/components/motion/AnimateOnScroll';
 
 const REASONS = [
   {
-    title: 'Clear conversation',
-    description: 'Discuss your plumbing issue and the work you need directly with the team.',
+    title: 'Atendimento atencioso',
+    description: 'Discuss your alvenaria issue and the work you need directly with a equipe.',
   },
   {
-    title: 'Discuss the scope',
-    description: 'Ask about the timing and scope for the plumbing work at your property.',
+    title: 'Pontualidade e qualidade',
+    description: 'Ask about the timing and scope for the alvenaria work at your property.',
   },
   {
     title: 'Plan the next step',
     description: 'Talk through the work, quote and next steps before you decide how to proceed.',
   },
   {
-    title: 'A range of property services',
-    description: 'The team can discuss toilet, bidet, kitchen sink, hot water pipe and general plumbing repairs.',
+    title: 'Serviços para o seu imóvel',
+    description: 'A equipe atende serviços de alvenaria, construção, reformas e reparos residenciais.',
   },
 ];
 
@@ -34,7 +34,7 @@ export default function HomeWhyUs() {
                 Our Approach
               </span>
               <h2 className="font-display text-26 sm:text-33 md:text-41 text-forest-ink mb-8 md:mb-10 leading-tight">
-                Plumbing Services for your property
+                Serviços de Alvenaria e Construção for your property
               </h2>
 
               <div className="divide-y divide-mist">
@@ -65,38 +65,38 @@ export default function HomeWhyUs() {
                 <div className="col-span-2 relative aspect-[16/10] bg-mist overflow-hidden border border-mist shadow-sm">
                   <MediaParallax speed={0.06} className="w-full h-full">
                     <Image
-                    src="/images/plumbing-technician.jpg"
-                    alt="Plumbing work in progress"
+                    src="/images/roofing-hero.png"
+                    alt="Serviço de construção em andamento"
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover"
                     />
                   </MediaParallax>
-                  <div className="absolute bottom-3 left-3 bg-[#29212A]/90 backdrop-blur-sm text-paper font-body text-12 px-3 py-1 font-medium">
-                    Plumbing and plumbing work
+                  <div className="absolute bottom-3 left-3 bg-[#20252B]/90 backdrop-blur-sm text-paper font-body text-12 px-3 py-1 font-medium">
+                    Serviços de alvenaria e construção
                   </div>
                 </div>
-                {/* Additional plumbing imagery */}
+                {/* Additional alvenaria imagery */}
                 <div className="col-span-2 sm:col-span-1 relative aspect-square bg-mist overflow-hidden border border-mist shadow-sm">
                   <Image
-                    src="/images/plumbing-repair.jpg"
-                    alt="Plumbing project"
+                    src="/images/roof-repair.png"
+                    alt="Projeto de construção"
                     fill
                     sizes="(max-width: 640px) 100vw, 25vw"
                     className="object-cover"
                   />
                 </div>
-                {/* Plumbing project detail */}
-                <div className="col-span-2 sm:col-span-1 relative aspect-square bg-[#FFF4F6] overflow-hidden border border-mist shadow-sm">
+                {/* Projeto de construção detail */}
+                <div className="col-span-2 sm:col-span-1 relative aspect-square bg-[#F3F7FA] overflow-hidden border border-mist shadow-sm">
                   <Image
-                    src="/images/plumbing-pipes.jpg"
-                    alt="Plumbing pipes project"
+                    src="/images/roof-with-tiles.png"
+                    alt="Projeto de construção"
                     fill
                     sizes="(max-width: 640px) 100vw, 25vw"
                     className="object-cover object-top"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#29212A]/80 text-paper font-body text-12 px-3 py-2 text-center">
-                     Plumbing repairs
+                  <div className="absolute bottom-0 left-0 right-0 bg-[#20252B]/80 text-paper font-body text-12 px-3 py-2 text-center">
+                     Serviços de alvenarias
                   </div>
                 </div>
               </div>

@@ -10,15 +10,15 @@ import { CLINIC_INFO, SERVICES } from '@/lib/clinic-data';
 import { createMetadata, generateServiceSchema } from '@/lib/seo';
 
 const RELATED_SERVICE_SLUGS: Record<string, string[]> = {
-  'plumbing-services': ['plumbing-repairs', 'toilet-bowl-repair', 'pipe-leak-repair'],
-  'plumbing-repairs': ['toilet-flushing-repair', 'pipe-leak-repair', 'plumbing-maintenance'],
-  'toilet-flushing-repair': ['toilet-bowl-repair', 'bidet-repair', 'plumbing-repairs'],
-  'pipe-leak-repair': ['plumbing-repairs', 'plumbing-maintenance', 'toilet-flushing-repair'],
-  'plumbing-maintenance': ['plumbing-repairs', 'bidet-repair', 'kitchen-sink-repair'],
-  'hot-water-pipe-repair': ['kitchen-sink-repair', 'plumbing-repairs', 'plumbing-maintenance'],
-  'toilet-bowl-repair': ['toilet-flushing-repair', 'plumbing-repairs', 'plumbing-maintenance'],
-  'kitchen-sink-repair': ['plumbing-services', 'hot-water-pipe-repair', 'toilet-bowl-repair'],
-  'bidet-repair': ['plumbing-maintenance', 'toilet-flushing-repair', 'plumbing-repairs'],
+  'servicos-de-alvenaria': ['construcao-residencial', 'reformas-residenciais', 'assentamento-de-pisos'],
+  'construcao-residencial': ['servicos-de-alvenaria', 'reformas-residenciais', 'manutencao-predial'],
+  'reformas-residenciais': ['servicos-de-alvenaria', 'reboco-de-paredes', 'pintura-residencial'],
+  'assentamento-de-pisos': ['reboco-de-paredes', 'reformas-residenciais', 'servicos-de-alvenaria'],
+  'reboco-de-paredes': ['pintura-residencial', 'reformas-residenciais', 'servicos-de-alvenaria'],
+  'pintura-residencial': ['reboco-de-paredes', 'reformas-residenciais', 'manutencao-predial'],
+  'pequenos-reparos': ['servicos-de-alvenaria', 'impermeabilizacao', 'manutencao-predial'],
+  'impermeabilizacao': ['manutencao-predial', 'reformas-residenciais', 'servicos-de-alvenaria'],
+  'manutencao-predial': ['pequenos-reparos', 'impermeabilizacao', 'construcao-residencial'],
 };
 
 export default function ServiceLandingPage({ slug }: { slug: string }) {
@@ -39,7 +39,7 @@ export default function ServiceLandingPage({ slug }: { slug: string }) {
             <div className="lg:col-span-7">
               <AnimateOnScroll animation="fade-right" duration={0.8}>
                 <span className="mb-3 block font-body text-13 font-medium uppercase tracking-wider text-brand">
-                  ADM Plumbing Services
+                  Marido de Aluguel Campo Engenharia
                 </span>
                 <WordRevealH1 text={service.name} />
                 <p className="mt-6 max-w-2xl font-body text-17 leading-relaxed text-forest-ink/85 md:text-21">
@@ -49,9 +49,9 @@ export default function ServiceLandingPage({ slug }: { slug: string }) {
                   {service.shortDescription}
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <Button href="/request-a-quote/" variant="forest" size="lg">Request a Quote</Button>
+                  <Button href="/solicitar-orcamento/" variant="forest" size="lg">Request a Quote</Button>
                   <Button href={`tel:${CLINIC_INFO.contact.phone.replace(/[^0-9+]/g, '')}`} variant="ghost" size="lg">
-                    Call {CLINIC_INFO.contact.phone}
+                    Ligue para {CLINIC_INFO.contact.phone}
                   </Button>
                 </div>
               </AnimateOnScroll>
@@ -70,7 +70,7 @@ export default function ServiceLandingPage({ slug }: { slug: string }) {
         <div className="mx-auto max-w-site px-6 md:px-12">
           <AnimateOnScroll animation="fade-up" duration={0.8}>
             <span className="mb-2 block font-body text-13 font-medium uppercase tracking-wider text-forest-light">Your project</span>
-            <h2 className="font-display text-33 text-forest-ink md:text-41">Planning {service.name.toLowerCase()} around your property</h2>
+            <h2 className="font-display text-33 text-forest-ink md:text-41">Planejamento de {service.name.toLowerCase()} para o seu imóvel</h2>
             <p className="mt-4 max-w-3xl font-body text-15 leading-relaxed text-forest-ink/80 md:text-17">{service.clinicalExplanation}</p>
           </AnimateOnScroll>
           <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -116,7 +116,7 @@ export default function ServiceLandingPage({ slug }: { slug: string }) {
             <span className="mb-2 block font-body text-13 font-medium uppercase tracking-wider text-forest-light">When to get in touch</span>
             <h2 className="font-display text-33 text-forest-ink md:text-41">Situations we can discuss</h2>
             <p className="mt-4 max-w-3xl font-body text-15 leading-relaxed text-forest-light md:text-17">
-              Tell us what you have noticed or what you are planning. We can talk through the property and help clarify suitable next steps for {service.name.toLowerCase()}.
+              Conte à equipe o que você precisa fazer. Vamos conversar sobre o imóvel e os próximos passos para {service.name.toLowerCase()}.
             </p>
           </AnimateOnScroll>
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -163,7 +163,7 @@ export default function ServiceLandingPage({ slug }: { slug: string }) {
           <AnimateOnScroll animation="fade-up" duration={0.8}>
             <span className="mb-2 block font-body text-13 font-medium uppercase tracking-wider text-forest-light">What to expect</span>
             <h2 className="font-display text-33 text-forest-ink md:text-41">Before, during and after the work</h2>
-            <p className="mt-4 max-w-3xl font-body text-15 leading-relaxed text-forest-light md:text-17">Every property and agreed scope is different. These are the main points to plan through with the team.</p>
+            <p className="mt-4 max-w-3xl font-body text-15 leading-relaxed text-forest-light md:text-17">Every property and agreed scope is different. These are the main points to plan through with a equipe.</p>
           </AnimateOnScroll>
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
             {service.recoveryTimeline.map((item, index) => (
@@ -184,19 +184,19 @@ export default function ServiceLandingPage({ slug }: { slug: string }) {
           <AnimateOnScroll animation="fade-up" duration={0.8} className="mb-8">
             <span className="mb-2 block font-body text-13 font-medium uppercase tracking-wider text-forest-light">Helpful answers</span>
             <h2 className="font-display text-33 text-forest-ink md:text-41">Questions about {service.name.toLowerCase()}</h2>
-            <p className="mt-3 max-w-2xl font-body text-15 leading-relaxed text-forest-light">If you have another question about your property, call the team and talk it through.</p>
+            <p className="mt-3 max-w-2xl font-body text-15 leading-relaxed text-forest-light">If you have another question about your property, call a equipe and talk it through.</p>
           </AnimateOnScroll>
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
               <Accordion items={service.faqs.map(({ question, answer }) => ({ question, answer }))} />
             </div>
             <AnimateOnScroll animation="fade-left" delay={0.1} className="bg-forest p-7 text-paper md:p-9 lg:col-span-5">
-              <span className="mb-2 block font-body text-13 font-medium uppercase tracking-wider text-paper/65">Talk with the team</span>
+              <span className="mb-2 block font-body text-13 font-medium uppercase tracking-wider text-paper/65">Talk with a equipe</span>
               <h3 className="font-display text-26">A quick conversation can help you plan the next step.</h3>
               <p className="mt-4 font-body text-15 leading-relaxed text-paper/75">Share what you have noticed, ask about the work and arrange a quote for your property.</p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <Button href="/request-a-quote/" variant="paper" size="lg">Request a Quote</Button>
-                <Button href={`tel:${CLINIC_INFO.contact.phone.replace(/[^0-9+]/g, '')}`} variant="ghost-light" size="lg">Call the team</Button>
+                <Button href="/solicitar-orcamento/" variant="paper" size="lg">Request a Quote</Button>
+                <Button href={`tel:${CLINIC_INFO.contact.phone.replace(/[^0-9+]/g, '')}`} variant="ghost-light" size="lg">Fale com a equipe</Button>
               </div>
             </AnimateOnScroll>
           </div>
@@ -207,7 +207,7 @@ export default function ServiceLandingPage({ slug }: { slug: string }) {
         <div className="mx-auto max-w-site px-6 md:px-12">
           <AnimateOnScroll animation="fade-up" duration={0.8}>
             <span className="mb-2 block font-body text-13 font-medium uppercase tracking-wider text-forest-light">Explore more</span>
-            <h2 className="font-display text-33 text-forest-ink md:text-41">Related plumbing services</h2>
+            <h2 className="font-display text-33 text-forest-ink md:text-41">Related alvenaria services</h2>
           </AnimateOnScroll>
           <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
             {(RELATED_SERVICE_SLUGS[service.slug] ?? []).map((relatedSlug, index) => {
@@ -218,7 +218,7 @@ export default function ServiceLandingPage({ slug }: { slug: string }) {
                   <Link href={`/${related.slug}/`} className="group flex h-full flex-col border border-mist bg-paper p-6 transition-colors hover:bg-paper-secondary md:p-7">
                     <h3 className="font-display text-21 text-forest-ink">{related.name}</h3>
                     <p className="mt-3 flex-1 font-body text-15 leading-relaxed text-forest-light">{related.shortDescription}</p>
-                    <span className="mt-6 font-body text-13 font-medium text-brand transition-colors group-hover:text-brand-hover">Explore service →</span>
+                    <span className="mt-6 font-body text-13 font-medium text-brand transition-colors group-hover:text-brand-hover">Conheça o serviço →</span>
                   </Link>
                 </AnimateOnScroll>
               );
@@ -230,10 +230,10 @@ export default function ServiceLandingPage({ slug }: { slug: string }) {
       <section className="bg-forest py-14 text-paper md:py-20">
         <div className="mx-auto flex max-w-site flex-col items-start justify-between gap-6 px-6 md:flex-row md:items-center md:px-12">
           <div>
-            <span className="mb-2 block font-body text-13 font-semibold uppercase tracking-wider text-paper/65">ADM Plumbing Services</span>
+            <span className="mb-2 block font-body text-13 font-semibold uppercase tracking-wider text-paper/65">Marido de Aluguel Campo Engenharia</span>
             <h2 className="font-display text-26 md:text-33">Tell us what you have in mind.</h2>
           </div>
-          <Link href="/request-a-quote/" className="inline-flex min-h-12 items-center justify-center bg-paper px-6 font-body text-15 font-semibold text-forest transition-colors hover:bg-softBlue">Request a quote</Link>
+          <Link href="/solicitar-orcamento/" className="inline-flex min-h-12 items-center justify-center bg-paper px-6 font-body text-15 font-semibold text-forest transition-colors hover:bg-softBlue">Solicite um orçamento</Link>
         </div>
       </section>
     </div>

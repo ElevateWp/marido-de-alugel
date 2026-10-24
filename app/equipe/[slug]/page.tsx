@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: DentistProfileProps): Promise
   return createMetadata({
     title: `${dentist.name} | ${dentist.title}`,
     description: dentist.bio,
-    pathname: `/our-team/${dentist.slug}/`,
+    pathname: `/equipe/${dentist.slug}/`,
     image: dentist.image,
   });
 }
@@ -67,13 +67,13 @@ export default function SingleDentistPage({ params }: DentistProfileProps) {
         <div className="max-w-site mx-auto px-6 md:px-12">
           <Breadcrumbs
             items={[
-              { name: 'ADM Plumbing Services team', path: '/our-team/' },
-              { name: dentist.name, path: `/our-team/${dentist.slug}/` },
+              { name: 'Marido de Aluguel Campo Engenharia team', path: '/equipe/' },
+              { name: dentist.name, path: `/equipe/${dentist.slug}/` },
             ]}
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-8 items-start">
-            {/* Illustrative plumbing team image */}
+            {/* Illustrative alvenaria team image */}
             <div className="lg:col-span-5">
               <AnimateOnScroll animation="fade-right" duration={0.8}>
                 <div className="relative aspect-[4/5] bg-mist overflow-hidden border border-mist shadow-sm">
@@ -88,7 +88,7 @@ export default function SingleDentistPage({ params }: DentistProfileProps) {
                 </div>
                 {dentist.experienceYears > 0 && <div className="mt-4 p-4 bg-mist/40 border border-mist flex justify-between text-13 font-body text-forest-ink/80">
                   <span>Business experience:</span>
-                  <span className="font-medium text-forest">{dentist.experienceYears}+ years of experience</span>
+                  <span className="font-medium text-forest">{dentist.experienceYears}+ anos de experiência</span>
                 </div>}
               </AnimateOnScroll>
             </div>
@@ -116,11 +116,11 @@ export default function SingleDentistPage({ params }: DentistProfileProps) {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-4">
-                  <Button href="/request-a-quote/" variant="forest" size="lg">
-                    Request a quote from {dentist.name}
+                  <Button href="/solicitar-orcamento/" variant="forest" size="lg">
+                    Solicite um orçamento com {dentist.name}
                   </Button>
-                  <Button href="/our-team/" variant="ghost" size="lg">
-                    Back to Our Team
+                  <Button href="/equipe/" variant="ghost" size="lg">
+                    Voltar para a equipe
                   </Button>
                 </div>
               </AnimateOnScroll>
@@ -136,7 +136,7 @@ export default function SingleDentistPage({ params }: DentistProfileProps) {
             {dentist.education.length > 0 && <div className="lg:col-span-6">
               <AnimateOnScroll animation="fade-up" duration={0.8}>
                 <h2 className="font-display text-26 md:text-33 text-forest-ink mb-6">
-                  Experience and Specialties
+                  Atuação e Especialidades
                 </h2>
                 <ul className="space-y-4 font-body text-15 text-forest-ink/80">
                   {dentist.education.map((edu, idx) => (
@@ -223,7 +223,7 @@ export default function SingleDentistPage({ params }: DentistProfileProps) {
             </div>
           </AnimateOnScroll>
           <AnimateOnScroll animation="fade-left" duration={0.8} delay={0.2}>
-            <Button href="/request-a-quote/" variant="lime" size="lg">
+            <Button href="/solicitar-orcamento/" variant="lime" size="lg">
               Request a Quote
             </Button>
           </AnimateOnScroll>
